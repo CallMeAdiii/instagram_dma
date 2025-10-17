@@ -59,15 +59,16 @@ $posts = [
 foreach ($posts as $post) {
     echo "
     <div class='post'>
-        <div class='post-header'>
+        <div class='post-header'> 
         <div class='header-left'> <!-- Levá strana vrchu postu kde bude profilovka a jméno -->
-             <img src='{$post['profile_pic']}' alt='profile'>
+            <img src='{$post['profile_pic']}' alt='profile'>
             <span class='username'>{$post['username']}</span>
+        </div>
         <div class='header-right'> <!-- Pravá strana kde budou jen tečky pro zobrazení více -->
             <span class='dots'>⋯</span>
         </div>
         
-        </div>
+    </div>
         <div class='post-image'> <!-- Zde bude obrázek -->
             <img src='{$post['image']}' alt='post image'>
         </div>
@@ -81,22 +82,22 @@ foreach ($posts as $post) {
                 <i class='fa-regular fa-bookmark'></i>
             </div>
         </div>
-    
-    
-         <div class='post-footer'>
+        
+        
+        
+        <div class='post-footer'>
             <p><strong>{$post['likes']} likes</strong></p>
             <p><strong>{$post['username']}</strong> {$post['caption']}</p>
              <div class='comments'>
-                <p><strong>{$post['comment']['username']}</strong> {$post['comment']['text']}</p>
+                <p><strong>{$post['comments']['username']}</strong> {$post['comments']['text']}</p>
             </div>
             <p class='time'>{$post['time']}</p>
             
         </div>
     </div>
-    
     ";
-        }
-
+}
 ?>
+
 </body>
 </html>
