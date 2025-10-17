@@ -55,3 +55,48 @@ $posts = [
     ],
 
     ];
+// Výpis všech příspěvků pomocí foreach
+foreach ($posts as $post) {
+    echo "
+    <div class='post'>
+        <div class='post-header'>
+        <div class='header-left'> <!-- Levá strana vrchu postu kde bude profilovka a jméno -->
+             <img src='{$post['profile_pic']}' alt='profile'>
+            <span class='username'>{$post['username']}</span>
+        <div class='header-right'> <!-- Pravá strana kde budou jen tečky pro zobrazení více -->
+            <span class='dots'>⋯</span>
+        </div>
+        
+        </div>
+        <div class='post-image'> <!-- Zde bude obrázek -->
+            <img src='{$post['image']}' alt='post image'>
+        </div>
+        <div  class='post-actions'> <!-- Tady jsou takové ty ikony pro lajky comenty a sdílení -->
+            <div class='actions-left'>  <!-- Zase je to rozdělené na left a right -->
+                <i class='fa-regular fa-heart'></i>
+                <i class='fa-regular fa-comment'></i>
+                <i class='fa-regular fa-paper-plane'></i>
+            </div>
+            <div class='actions-right'> <!-- Zde budou ikony které chci aby byly na druhé straně -->
+                <i class='fa-regular fa-bookmark'></i>
+            </div>
+        </div>
+    
+    
+         <div class='post-footer'>
+            <p><strong>{$post['likes']} likes</strong></p>
+            <p><strong>{$post['username']}</strong> {$post['caption']}</p>
+             <div class='comments'>
+                <p><strong>{$post['comment']['username']}</strong> {$post['comment']['text']}</p>
+            </div>
+            <p class='time'>{$post['time']}</p>
+            
+        </div>
+    </div>
+    
+    ";
+        }
+
+?>
+</body>
+</html>
